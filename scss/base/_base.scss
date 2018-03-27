@@ -1,0 +1,29 @@
+
+// ==================================
+// Base
+// ==================================
+
+// Universal styling
+
+ * {
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ }
+
+ // Text
+
+ p {
+   font-family: $font-family--primary;
+   font-weight: $font-weight--light;
+   color: palette(grey, light);
+   line-height: $base-line;
+   font-size: em(18px);
+ }
+
+// Lists
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

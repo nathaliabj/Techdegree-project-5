@@ -1,0 +1,59 @@
+//==================================
+//Grid
+//==================================
+
+//Grid flex
+
+.grid__row {
+  @include flexbox(flex, column);
+  @include mq(medium) {
+    @include flexbox(flex, row);
+     justify-content: space-between;
+   }
+}
+
+// Grid layout
+
+@include mq(medium) {
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    .grid__col--#{$i} {
+      width: percentage($target / $context);
+    }
+  }
+}
+
+// Grid positioning
+
+.grid{
+  &__row {
+     margin-bottom: em(40px);
+  }
+  &__col {
+     @include bg-grid($grid-theme-colors); // Include mixin to give background color
+     }
+   }
+
+.centered {
+  margin: auto;
+}
+// Grid general styling
+
+.theme__colors {
+  @extend %grid; // Styling
+  padding: em(15px) 0 0 em(8px);
+  @include mq(medium) {
+    text-align: center;
+  }
+}
+
+
+
+// Container general styling
+
+.container {
+  @include size(80%);
+  margin: auto;
+  font-family: $font-family--primary;
+}

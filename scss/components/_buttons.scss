@@ -1,0 +1,35 @@
+
+// ==================================
+// Buttons
+// ==================================
+
+// Background color
+
+.btn {
+  @include bg-colors($ui-colors);
+}
+
+// Button styling
+
+[class^="btn--"] {
+  @extend %center-align; // center text
+  @extend %btn; // button styling
+  margin-top: em(20px);
+  color: $white;
+  padding: 1px 0 0 0; // visually centered
+  @include mq(medium) {
+    width: 17%;
+  }
+}
+
+
+
+
+// Flex button at medium screen
+
+@include mq(medium) {
+  .grid__col--12 {
+    @include flexbox(flex, wrap);
+    justify-content: space-around;
+  }
+}

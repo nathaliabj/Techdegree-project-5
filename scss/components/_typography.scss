@@ -1,0 +1,42 @@
+// ==================================
+// Typography
+// ==================================
+
+// Typography:
+// .container
+// .link
+// .blockquote
+// .headline--primary
+// .headline--secondary
+
+// Card link styling
+
+.card {
+    margin: em(30px) 0;
+    @include mq(medium) {
+      margin-top: 0;
+    }
+    p .link {
+      @extend %link;
+      color: $color-secondary;
+      font-weight: $font-weight--medium;
+      font-size: em(19px);
+    }
+}
+
+// Headlines styling
+
+.headline--primary {
+  @extend %prim-headline;
+}
+
+.headline--secondary {
+  @extend %sec-headline;
+}
+
+// blockquote styling
+
+.blockquote {
+  @extend %blockquote;
+  margin-bottom: em(60px);
+}

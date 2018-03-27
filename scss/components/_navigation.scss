@@ -1,0 +1,39 @@
+// ==================================
+// Images
+// ==================================
+
+// Flex items
+
+.nav {
+  @include flexbox(flex, column);
+  @include mq(medium) {
+    @include flexbox(flex, row);
+    justify-content: flex-end;
+    margin-top: em(55px);
+  }
+}
+
+// Nav items general styling
+
+.nav {
+
+   &__item {
+     @extend %nav-items;
+     @include mq(medium) {
+       width: 16%;
+     }
+      &:first-child {
+        background-color: $color-primary;
+      }
+      &:first-child a {
+        color: $white;
+      }
+  a {
+      @extend %link;
+      display: block;
+      padding-top: em(18px);
+      color: palette(grey, dark);
+      font-weight: $font-weight--medium;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+// ==================================
+// Mixins
+// ==================================
+
+// Bem
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Flexbox
+
+@mixin flexbox($disp: null, $flx-dir: null, $flx-wrap: null) {
+  display: $disp;
+  flex-direction: $flx-dir;
+  flex-wrap: $flx-wrap;
+}
+
+// Color modifiers
+
+@mixin bg-colors($map) {
+  @each $theme, $color in $ui-colors {
+  	&--#{$theme} {
+  		background-color: $color;
+      &:hover {
+        background-color: darken($color, 15%);
+        transition: all .3s;
+      }
+  	}
+  }
+}
+
+
+@mixin bg-grid($map) {
+  @each $theme, $color in $grid-theme-colors {
+      &--#{$theme}.theme__colors{
+        background-color: $color;
+      }
+  }
+}
+
+// Media queries
+
+@mixin mq($break) {
+  @if $break == "small" {
+    @media (min-width: $brkpoint-sm) and (max-width: $brkpoint-med) {
+      @content;
+    }
+  }
+    @else if $break == "medium" {
+      @media (min-width: $brkpoint-med + 1) {
+        @content;
+      }
+    }
+  }
+
+// Sizing
+
+@mixin size($width, $height: null) {
+  width: $width;
+  height: $height;
+}

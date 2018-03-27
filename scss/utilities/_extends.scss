@@ -1,0 +1,97 @@
+// ==================================
+// Extends
+// ==================================
+
+// Links
+
+%link {
+  @extend %center-align; // Center
+  text-decoration: none;
+}
+
+// Nav items
+
+%nav-items {
+  @extend %brd-rad;
+  width: 100%;
+  height: em(55px);
+  align-self: center;
+}
+
+// Images
+
+%img  {
+  display: block;
+}
+
+// Headlines
+
+%prim-headline {
+  color: $color-primary;
+  margin: em(20px) 0 em(40px) em(20px);
+  font-family: $font-family--secondary;
+}
+
+%sec-headline {
+  font-weight: $font-weight--thin;
+  color: lighten($grey, 18%);
+  margin-top: em(10px);
+}
+
+// Input elements
+
+%input {
+  display: block;
+  width: 95%;
+  height: 50px;
+  border: none;
+  border-bottom: 7px solid $color-primary;
+}
+
+// Border radius
+
+%brd-rad {
+  border-radius: em(5px);
+}
+
+// Button styling
+
+%btn {
+ border: none;
+ width: 100%;
+ height: em(49px);
+ font-weight: $font-weight--medium;
+ text-transform: uppercase;
+}
+
+// Grid styling
+
+%grid {
+  width: 100%;
+  height: em(49px);
+  border: none;
+  border-radius: em(5px);
+  margin-bottom: em(5px);
+  color: $grey;
+  font-weight: $font-weight--medium;
+}
+
+// blockquote styling
+
+%blockquote {
+  font-size: em(24px);
+  color: $grey;
+  font-style: italic;
+  line-height: 120%;
+  font-weight: $font-weight--medium;
+  padding-left: em(20px);
+  border-left: 10px solid $color-primary;
+  border-top-left-radius: em(5px);
+  border-bottom-left-radius: em(5px);
+}
+
+// Center alignment
+
+%center-align {
+  text-align: center;
+}
